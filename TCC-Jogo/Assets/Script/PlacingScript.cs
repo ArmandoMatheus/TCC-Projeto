@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class PlacingScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public SelectingManager selecting;
+    bool canPlace;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
     }
+
+    void OnMouseDown()
+    {
+        Instantiate(selecting.unitSelected, transform.position, transform.rotation);
+    }
+
+    void OnTriggerEnter2D(Collider2D target)
+    {
+        if (target.tag == "Ally")
+        {
+            canPlace = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D target)
+    {
+        if (target.tag == "Ally")
+        {
+            canPlace = false;
+        }
+    }
+
+    //OnMousseClick instantiate the SELECTED - the SELECTED is defined in the character selection 
 }
