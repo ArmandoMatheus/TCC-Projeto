@@ -46,9 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4508599456164d240a852420217cfeef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 0
+  enemyHP: 7
   enemySpeed: 2
   canBeHit: 0
+  trashLoot:
+  - {fileID: 8366672667756292125, guid: 5ff2f9f165ad4484eb46978a60aa5fea, type: 3}
+  - {fileID: 2861749899235350849, guid: ff17af0742ee942418de13e300d427b3, type: 3}
+  - {fileID: 8502330837961728107, guid: d50d110e2b81c864cab47f8d8623e022, type: 3}
+  - {fileID: 4532838267569445734, guid: 911371a5abe418e418fd8fd860c140fe, type: 3}
+  lootSpawn: {fileID: 0}
 --- !u!61 &6302645279964776118
 BoxCollider2D:
   m_ObjectHideFlags: 0
