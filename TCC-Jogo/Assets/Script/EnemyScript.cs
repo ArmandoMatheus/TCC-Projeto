@@ -7,6 +7,7 @@ public class EnemyScript : MonoBehaviour
     public float enemyHP = 7;
     public float enemySpeed = 2f;
     public bool canBeHit;
+    int lootNum;
 
     public GameObject[] trashLoot;  
     void Update()
@@ -32,9 +33,12 @@ public class EnemyScript : MonoBehaviour
         }
     }
     void Die()
-    {        
-        
+    {
+        lootNum = Random.Range(0, 2);
+        for (int i = 0; i < lootNum; i++)
+        {
             Instantiate(trashLoot[Random.Range(0, 3)], transform.position, transform.rotation);
+        }
         
         Destroy(gameObject);
     }
