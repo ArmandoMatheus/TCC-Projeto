@@ -36,7 +36,7 @@ public class EnemyScript : MonoBehaviour
     {
         Vector3 temp = transform.position;
         temp.x -= enemySpeed * Time.deltaTime;
-        transform.position = temp;        
+        transform.position = temp;   
     }
     void OnTriggerEnter2D(Collider2D target)
     {
@@ -47,6 +47,12 @@ public class EnemyScript : MonoBehaviour
         if (target.tag == "Ally")
         {
             hitPlayer = true;
+        }
+        if(target.tag == "EndWall")
+        {
+            Vector3 temp = transform.position;
+            temp.x = 0;
+            transform.position = temp;
         }
     }
     void OnTriggerExit2D(Collider2D target)
