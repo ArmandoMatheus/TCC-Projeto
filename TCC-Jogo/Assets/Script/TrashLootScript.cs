@@ -23,8 +23,8 @@ public class TrashLootScript : MonoBehaviour
         {
             timerX = 1f;
             timerY = 1f;
-            moveX = Random.Range(-2f, 2f);
-            moveY = Random.Range(-2f, 2f);
+            moveX = Random.Range(-.5f, .5f);
+            moveY = Random.Range(-.5f, .5f);
             setValues = false;
         }
         Vector3 temp = transform.position;

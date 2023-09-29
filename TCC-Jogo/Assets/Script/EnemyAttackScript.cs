@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class EnemyAttackScript : MonoBehaviour
 {
-    public float bulletSpeed;
-    public float bulletDestroyTimer;
+    public float attSpeed;
+    public float attDestroyTimer;
     void Start()
     {
-        
+
     }
-    // Update is called once per frame
     void Update()
     {
         Move();
@@ -18,20 +17,20 @@ public class BulletScript : MonoBehaviour
     void Move()
     {
         Vector3 temp = transform.position;
-        temp.x += bulletSpeed * Time.deltaTime;
+        temp.x -= attSpeed * Time.deltaTime;
         transform.position = temp;
-        bulletDestroyTimer -= Time.deltaTime;
+        attDestroyTimer -= Time.deltaTime;
 
-        if(bulletDestroyTimer <= 0)
+        if (attDestroyTimer <= 0)
         {
             Destroy(gameObject);
         }
     }
     void OnTriggerEnter2D(Collider2D target)
     {
-        if(target.tag == "Enemy")
+        if (target.tag == "Ally")
         {
             Destroy(gameObject);
-        }    
+        }
     }
 }

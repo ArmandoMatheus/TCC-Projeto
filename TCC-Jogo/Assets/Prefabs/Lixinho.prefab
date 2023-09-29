@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1973595539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1973595540}
+  m_Layer: 2
+  m_Name: AttackPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1973595540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973595539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.58, y: -0.19, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6302645279964776116}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6302645279964776104
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +42,7 @@ GameObject:
   - component: {fileID: 6302645279964776119}
   - component: {fileID: 6302645279964776118}
   - component: {fileID: 6302645279964776105}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Lixinho
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -31,6 +61,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6302645280442240283}
+  - {fileID: 1973595540}
+  - {fileID: 7209010371295795153}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50,10 +82,14 @@ MonoBehaviour:
   enemySpeed: 2
   canBeHit: 0
   trashLoot:
-  - {fileID: 8366672667756292125, guid: 5ff2f9f165ad4484eb46978a60aa5fea, type: 3}
-  - {fileID: 2861749899235350849, guid: ff17af0742ee942418de13e300d427b3, type: 3}
-  - {fileID: 4532838267569445734, guid: 911371a5abe418e418fd8fd860c140fe, type: 3}
-  - {fileID: 8502330837961728107, guid: d50d110e2b81c864cab47f8d8623e022, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  attack: {fileID: 778885292582998005, guid: 454a38afbdac49f4bb5848c2247aec26, type: 3}
+  attackSpawnPos: {fileID: 1973595540}
+  attackTimer: 3
+  currentAttackTimer: 3
 --- !u!61 &6302645279964776118
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -67,7 +103,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0779798, y: 0.033809423}
+  m_Offset: {x: 0.1101588, y: 0.033809423}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -78,7 +114,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.467875, y: 1.7319837}
+  m_Size: {x: 1.403517, y: 1.7319837}
   m_EdgeRadius: 0
 --- !u!50 &6302645279964776105
 Rigidbody2D:
@@ -111,7 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6302645280442240283}
   - component: {fileID: 6302645280442240280}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ImageLixo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,3 +219,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7666000383670246421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7209010371295795153}
+  - component: {fileID: 2987356388999529729}
+  - component: {fileID: 7429140756856029381}
+  m_Layer: 2
+  m_Name: EnemyDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7209010371295795153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7666000383670246421}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6302645279964776116}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2987356388999529729
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7666000383670246421}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.24670732, y: -0.30033922}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4934146, y: 0.18479252}
+  m_EdgeRadius: 0
+--- !u!114 &7429140756856029381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7666000383670246421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a566b922df5e0d145806db85f6b1cb77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seeEnemy: 0
+  seeAlly: 0

@@ -24,9 +24,7 @@ public class ShooterScript : MonoBehaviour
     void Update()
     {
         ShootTimer();
-        Fire();
-
-       
+        Fire();       
     }
 
     void ShootTimer()

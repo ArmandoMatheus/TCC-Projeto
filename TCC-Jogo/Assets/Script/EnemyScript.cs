@@ -9,27 +9,51 @@ public class EnemyScript : MonoBehaviour
     public bool canBeHit;
     int lootNum;
 
-    public GameObject[] trashLoot;  
+    public bool hitPlayer = false;
+
+    public GameObject[] trashLoot;
+    public GameObject attack;
+    public Transform attackSpawnPos;
+    public float attackTimer, currentAttackTimer;
+
+    public EnemyDetection enemyDetection;
+    
+    
     void Update()
     {
-        Move();
+        if (!hitPlayer)
+        {
+            Move();
+        }
+        currentAttackTimer -= Time.deltaTime;
+        if (enemyHP <= 0)
+        {
+            Die();
+        }
+        Attack();
     }
     void Move()
     {
         Vector3 temp = transform.position;
         temp.x -= enemySpeed * Time.deltaTime;
-        transform.position = temp;
-
-        if(enemyHP <= 0)
-        {
-            Die();
-        }
+        transform.position = temp;        
     }
     void OnTriggerEnter2D(Collider2D target)
     {
         if (target.tag == "Bullet")
         {
             enemyHP--;
+        }
+        if (target.tag == "Ally")
+        {
+            hitPlayer = true;
+        }
+    }
+    void OnTriggerExit2D(Collider2D target)
+    {        
+        if (target.tag == "Ally")
+        {
+            hitPlayer = false;
         }
     }
     void Die()
@@ -41,5 +65,13 @@ public class EnemyScript : MonoBehaviour
         }
         
         Destroy(gameObject);
+    }
+    void Attack()
+    {
+        if (enemyDetection.seeAlly && currentAttackTimer <= 0)
+        {
+            Instantiate(attack, attackSpawnPos.position, attackSpawnPos.rotation);
+            currentAttackTimer = attackTimer;
+        }
     }
 }

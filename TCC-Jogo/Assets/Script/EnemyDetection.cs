@@ -5,11 +5,16 @@ using UnityEngine;
 public class EnemyDetection : MonoBehaviour
 {
     public bool seeEnemy;
+    public bool seeAlly;
     void OnTriggerEnter2D(Collider2D target)
     {
         if (target.tag == "Enemy")
         {
             seeEnemy = true;
+        }
+        if (target.tag == "Ally")
+        {
+            seeAlly = true;
         }
     }
 
@@ -18,6 +23,10 @@ public class EnemyDetection : MonoBehaviour
         if (target.tag == "Enemy")
         {
             seeEnemy = false;
+        }
+        if (target.tag == "Ally")
+        {
+            seeAlly = false;
         }
     }
 }

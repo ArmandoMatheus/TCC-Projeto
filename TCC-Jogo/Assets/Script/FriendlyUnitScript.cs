@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class FriendlyUnitScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int unitHP;
     void Start()
     {
         
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if (unitHP <= 0)
+        {
+            Die();
+        }
+    }
+    void OnTriggerEnter2D(Collider2D target)
+    {
+        if(target.tag == "EnemyAttack")
+        {            
+            unitHP--;            
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
