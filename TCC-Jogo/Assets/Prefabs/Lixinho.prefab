@@ -81,15 +81,17 @@ MonoBehaviour:
   enemyHP: 7
   enemySpeed: 2
   canBeHit: 0
+  hitPlayer: 0
   trashLoot:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8366672667756292125, guid: 5ff2f9f165ad4484eb46978a60aa5fea, type: 3}
+  - {fileID: 2861749899235350849, guid: ff17af0742ee942418de13e300d427b3, type: 3}
+  - {fileID: 8502330837961728107, guid: d50d110e2b81c864cab47f8d8623e022, type: 3}
+  - {fileID: 4532838267569445734, guid: 911371a5abe418e418fd8fd860c140fe, type: 3}
   attack: {fileID: 778885292582998005, guid: 454a38afbdac49f4bb5848c2247aec26, type: 3}
   attackSpawnPos: {fileID: 1973595540}
-  attackTimer: 3
-  currentAttackTimer: 3
+  attackTimer: 2
+  currentAttackTimer: 2
+  enemyDetection: {fileID: 7429140756856029381}
 --- !u!61 &6302645279964776118
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -100,7 +102,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.1101588, y: 0.033809423}

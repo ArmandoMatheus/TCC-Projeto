@@ -5,11 +5,6 @@ using UnityEngine;
 public class FriendlyUnitScript : MonoBehaviour
 {
     public int unitHP;
-    void Start()
-    {
-        
-    }
-    
     void Update()
     {
         if (unitHP <= 0)
@@ -24,7 +19,6 @@ public class FriendlyUnitScript : MonoBehaviour
             unitHP--;            
         }
     }
-
     void Die()
     {
         Destroy(gameObject);

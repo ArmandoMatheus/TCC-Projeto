@@ -5,13 +5,8 @@ using UnityEngine;
 public class TrashLootScript : MonoBehaviour
 {
     public bool isMetal, isVidro, isPapel, isPlastico;
-    float moveX, moveY, timerX, timerY;
-    public TrashManager trashManager;
+    float moveX, moveY, timerX = 1f, timerY = 1f;
     bool setValues = true;
-    void Start()
-    {
-        
-    }
     void Update()
     {
         Move();
@@ -21,8 +16,6 @@ public class TrashLootScript : MonoBehaviour
     {
         if (setValues)
         {
-            timerX = 1f;
-            timerY = 1f;
             moveX = Random.Range(-.5f, .5f);
             moveY = Random.Range(-.5f, .5f);
             setValues = false;
@@ -47,14 +40,13 @@ public class TrashLootScript : MonoBehaviour
     void OnMouseDown()
     {
         if (isMetal)
-        { trashManager.metalN++; }
+        { TrashManager.metalN++; }
         if (isVidro)
-        { trashManager.vidroN++; }
+        { TrashManager.vidroN++; }
         if (isPapel)
-        { trashManager.papelN++; }
+        { TrashManager.papelN++; }
         if (isPlastico)
-        { trashManager.plasticoN++; }
-        trashManager.UpdateValues();
+        { TrashManager.plasticoN++; }
         Destroy(gameObject);    
     }
 }

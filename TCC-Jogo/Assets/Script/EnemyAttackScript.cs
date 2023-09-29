@@ -6,10 +6,6 @@ public class EnemyAttackScript : MonoBehaviour
 {
     public float attSpeed;
     public float attDestroyTimer;
-    void Start()
-    {
-
-    }
     void Update()
     {
         Move();

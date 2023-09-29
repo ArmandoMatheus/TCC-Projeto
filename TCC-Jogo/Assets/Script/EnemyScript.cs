@@ -16,8 +16,7 @@ public class EnemyScript : MonoBehaviour
     public Transform attackSpawnPos;
     public float attackTimer, currentAttackTimer;
 
-    public EnemyDetection enemyDetection;
-    
+    public EnemyDetection enemyDetection;    
     
     void Update()
     {
@@ -48,12 +47,6 @@ public class EnemyScript : MonoBehaviour
         {
             hitPlayer = true;
         }
-        if(target.tag == "EndWall")
-        {
-            Vector3 temp = transform.position;
-            temp.x = 0;
-            transform.position = temp;
-        }
     }
     void OnTriggerExit2D(Collider2D target)
     {        
@@ -64,12 +57,11 @@ public class EnemyScript : MonoBehaviour
     }
     void Die()
     {
-        lootNum = Random.Range(0, 2);
+        lootNum = Random.Range(1, 3);
         for (int i = 0; i < lootNum; i++)
         {
             Instantiate(trashLoot[Random.Range(0, 3)], transform.position, transform.rotation);
-        }
-        
+        }        
         Destroy(gameObject);
     }
     void Attack()

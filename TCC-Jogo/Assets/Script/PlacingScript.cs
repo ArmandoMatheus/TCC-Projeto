@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlacingScript : MonoBehaviour
 {
     public SelectingManager selecting;
-    bool canPlace;
 
-    private SpriteRenderer sprite;
+    bool isPlaced;
+    SpriteRenderer sprite;
     public Color32 rColor;
     public int alphaVal;
     bool alphaMin = false;
@@ -21,50 +21,48 @@ public class PlacingScript : MonoBehaviour
         if(selecting.isSelecting == true)
         {
             Highlighting();
-        } 
-    }
-
-    void OnMouseDown()
-    {
-        if (selecting.isSelecting == true)
+        }
+        else
         {
-            Instantiate(selecting.unitSelected, transform.position, transform.rotation);
-            selecting.isSelecting = false;
             sprite.color = new Color32(255, 255, 255, 0);
         }
     }
-
-    void OnTriggerEnter2D(Collider2D target)
+    void OnMouseDown()
+    {
+        if (selecting.isSelecting)
+        {
+            Instantiate(selecting.unitSelected, transform.position, transform.rotation);
+            selecting.isSelecting = false;            
+        }
+    }
+    void OnTriggerStay2D(Collider2D target)
     {
         if (target.tag == "Ally")
         {
-            canPlace = false;
-        }
+           
+        }        
     }
-
     void OnTriggerExit2D(Collider2D target)
     {
         if (target.tag == "Ally")
         {
-            canPlace = true;
+           
         }
     }
     void Highlighting()
     {
-        if (alphaMin == true)
+        if (alphaMin)
         {
-            alphaVal = alphaVal +2;
-            if (alphaVal == 200)
+            alphaVal += 4;
+            if (alphaVal >= 200)
                 alphaMin = false;
         }
-        if (alphaMin == false)
+        if (!alphaMin)
         {
-            alphaVal = alphaVal - 2;
-            if (alphaVal == 0)
+            alphaVal -= 4;
+            if (alphaVal <= 0)
                 alphaMin = true;
-        }
-       
-        sprite.color = new Color32(255, 255, 255, (byte)alphaVal);        
-
-        }
+        }       
+        sprite.color = new Color32(255, 255, 255, (byte)alphaVal);
+    }
 }

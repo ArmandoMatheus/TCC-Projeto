@@ -6,32 +6,25 @@ public class ShooterScript : MonoBehaviour
 {
     public GameObject BulletPrefab;
     public Transform BulletSpawnPoint;
-
     public EnemyDetection enemyDetection;
 
     public float bulletTimer;
+   
+    /*
     public bool canShoot;
-
-
     public bool shoot;
     public float shooting;
     public float animTime = .2f;
-    void Start()
-    {
-
-    }
-  
+    */
     void Update()
     {
         ShootTimer();
         Fire();       
     }
-
     void ShootTimer()
     {
         bulletTimer -= Time.deltaTime;
     }
-
     void Fire()
     {
         if (enemyDetection.seeEnemy == true && bulletTimer < 0)
