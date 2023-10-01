@@ -7,7 +7,7 @@ public class EnemySpawnScript : MonoBehaviour
     public GameObject[] enemyPool;
     public Transform[] enemyPos;
 
-    public float timer = 4f;
+    public float timer = 7f;
 
     void Start()
     {
@@ -20,6 +20,14 @@ public class EnemySpawnScript : MonoBehaviour
         Instantiate(enemyPool[Random.Range(0, enemyPool.Length)], enemyPos[Random.Range(0, enemyPos.Length)].transform.position, Quaternion.identity);
 
         Invoke("Spawn", timer);
+    }
+
+    private void Update()
+    {
+        if (timer > 2f)
+        {
+            timer -= Time.deltaTime * .05f;
+        }
     }
 }
 

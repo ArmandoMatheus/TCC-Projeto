@@ -115,4 +115,4 @@ MonoBehaviour:
   isMetal: 0
   isVidro: 0
   isPapel: 0
-  isPlatico: 1
+  isPlastico: 1

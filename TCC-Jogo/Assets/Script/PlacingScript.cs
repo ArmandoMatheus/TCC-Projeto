@@ -32,6 +32,7 @@ public class PlacingScript : MonoBehaviour
             Instantiate(selecting.unitSelected, transform.position, transform.rotation);
             selecting.isSelecting = false;
             isPlaced = true;
+            selecting.Pay();
         }
     }
     void OnTriggerEnter2D(Collider2D target)

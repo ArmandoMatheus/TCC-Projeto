@@ -5,15 +5,30 @@ using UnityEngine;
 public class BaseScript : MonoBehaviour
 {
     public int baseHP;
-    public 
+    public int healing;
+    
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void OnTriggerEnter2D(Collider2D target)
+    {
+        if (target.tag == "Enemy")
+        {
+            baseHP--;
+            if(baseHP <= 0)
+            {
+                GameOver();
+            }
+        }
+    }
+    void GameOver()
+    {
+        Debug.Log("Game Over");
     }
 }

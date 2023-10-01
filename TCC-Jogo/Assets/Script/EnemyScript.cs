@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     public float enemyHP = 7;
-    public float enemySpeed = 2f;
+    public float enemySpeed = 1f;
     public bool canBeHit;
     int lootNum;
 
@@ -47,6 +47,17 @@ public class EnemyScript : MonoBehaviour
         {
             hitPlayer = true;
         }
+        if(target.tag == "Base")
+        {
+            Die();
+        }
+    }
+    private void OnTriggerStay2D(Collider2D target)
+    {
+        if(target.tag == "Tijolo")
+        {
+            enemyHP -= Time.deltaTime * 0.5f;
+        }
     }
     void OnTriggerExit2D(Collider2D target)
     {        
@@ -57,10 +68,10 @@ public class EnemyScript : MonoBehaviour
     }
     void Die()
     {
-        lootNum = Random.Range(1, 3);
+        lootNum = Random.Range(2, 3);
         for (int i = 0; i < lootNum; i++)
         {
-            Instantiate(trashLoot[Random.Range(0, 3)], transform.position, transform.rotation);
+            Instantiate(trashLoot[Random.Range(0, 4)], transform.position, transform.rotation);
         }        
         Destroy(gameObject);
     }
