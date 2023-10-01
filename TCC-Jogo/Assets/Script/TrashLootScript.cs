@@ -7,6 +7,7 @@ public class TrashLootScript : MonoBehaviour
     public bool isMetal, isVidro, isPapel, isPlastico;
     float moveX, moveY, timerX = 1f, timerY = 1f;
     bool setValues = true;
+    float collectTime = 3f;
     void Update()
     {
         Move();
@@ -35,9 +36,14 @@ public class TrashLootScript : MonoBehaviour
     {
         timerX -= Time.deltaTime;
         timerY -= Time.deltaTime;
+        collectTime -= Time.deltaTime;
+        if(collectTime <= 0)
+        {
+            Collect();
+        }
     }
 
-    void OnMouseDown()
+    void Collect()
     {
         if (isMetal)
         { TrashManager.metalN++; }

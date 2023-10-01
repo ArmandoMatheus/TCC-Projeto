@@ -6,11 +6,9 @@ public class PlacingScript : MonoBehaviour
 {
     public SelectingManager selecting;
 
-    bool isPlaced;
+    public bool isPlaced;
     SpriteRenderer sprite;
     public Color32 rColor;
-    public int alphaVal;
-    bool alphaMin = false;
 
     void Start()
     {
@@ -18,9 +16,9 @@ public class PlacingScript : MonoBehaviour
     }
     void Update()
     {
-        if(selecting.isSelecting == true)
+        if(selecting.isSelecting == true && !isPlaced)
         {
-            Highlighting();
+            Highlight();
         }
         else
         {
@@ -29,40 +27,30 @@ public class PlacingScript : MonoBehaviour
     }
     void OnMouseDown()
     {
-        if (selecting.isSelecting)
+        if (selecting.isSelecting && !isPlaced)
         {
             Instantiate(selecting.unitSelected, transform.position, transform.rotation);
-            selecting.isSelecting = false;            
+            selecting.isSelecting = false;
+            isPlaced = true;
         }
     }
-    void OnTriggerStay2D(Collider2D target)
+    void OnTriggerEnter2D(Collider2D target)
     {
         if (target.tag == "Ally")
         {
-           
+            Debug.Log("Detectado");
         }        
     }
     void OnTriggerExit2D(Collider2D target)
     {
         if (target.tag == "Ally")
         {
-           
+            Debug.Log("saiu");
+            isPlaced = false;
         }
     }
-    void Highlighting()
+    void Highlight()
     {
-        if (alphaMin)
-        {
-            alphaVal += 4;
-            if (alphaVal >= 200)
-                alphaMin = false;
-        }
-        if (!alphaMin)
-        {
-            alphaVal -= 4;
-            if (alphaVal <= 0)
-                alphaMin = true;
-        }       
-        sprite.color = new Color32(255, 255, 255, (byte)alphaVal);
+        sprite.color = new Color32(255, 255, 255, (byte)selecting.alphaVal);
     }
 }

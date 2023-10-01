@@ -7,6 +7,31 @@ public class SelectingManager : MonoBehaviour
     public GameObject[] unitOptions;
     public GameObject unitSelected;
     public bool isSelecting = false;
+    public int alphaVal;
+    bool alphaMin = false;
+
+    void Update()
+    {
+        if (isSelecting)
+        {
+            if (alphaMin)
+            {
+                alphaVal += 4;
+                if (alphaVal >= 200)
+                    alphaMin = false;
+            }
+            if (!alphaMin)
+            {
+                alphaVal -= 4;
+                if (alphaVal <= 0)
+                    alphaMin = true;
+            }
+        }
+        else
+        {
+            alphaVal = 0;
+        }     
+    }
     public void Select1()
     {
         unitSelected = unitOptions[0];
