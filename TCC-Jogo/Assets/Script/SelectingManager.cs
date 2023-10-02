@@ -39,9 +39,9 @@ public class SelectingManager : MonoBehaviour
         {
             unitSelected = unitOptions[0];
             isSelecting = true;
-            pVidro = 3;
+            pVidro = 1;
             pMetal = 0;
-            pPapel = 0;
+            pPapel = 2;
             pPlastico = 2;
         }
     }
@@ -53,8 +53,8 @@ public class SelectingManager : MonoBehaviour
             unitSelected = unitOptions[1];
             isSelecting = true;
             pVidro = 0;
-            pMetal = 4;
-            pPapel = 0;
+            pMetal = 3;
+            pPapel = 1;
             pPlastico = 1;
         }
     }
@@ -67,8 +67,8 @@ public class SelectingManager : MonoBehaviour
             isSelecting = true;
             pVidro = 2;
             pMetal = 0;
-            pPapel = 3;
-            pPlastico = 0;
+            pPapel = 2;
+            pPlastico = 1;
         }
     }
 

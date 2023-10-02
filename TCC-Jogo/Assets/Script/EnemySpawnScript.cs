@@ -7,7 +7,7 @@ public class EnemySpawnScript : MonoBehaviour
     public GameObject[] enemyPool;
     public Transform[] enemyPos;
 
-    public float timer = 7f;
+    public float timer;
 
     void Start()
     {
@@ -26,7 +26,7 @@ public class EnemySpawnScript : MonoBehaviour
     {
         if (timer > 2f)
         {
-            timer -= Time.deltaTime * .05f;
+            timer -= Time.deltaTime * .005f;
         }
     }
 }

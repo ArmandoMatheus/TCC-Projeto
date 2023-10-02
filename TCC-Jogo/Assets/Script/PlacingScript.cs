@@ -35,16 +35,9 @@ public class PlacingScript : MonoBehaviour
             selecting.Pay();
         }
     }
-    void OnTriggerEnter2D(Collider2D target)
-    {
-        if (target.tag == "Ally")
-        {
-            Debug.Log("Detectado");
-        }        
-    }
     void OnTriggerExit2D(Collider2D target)
     {
-        if (target.tag == "Ally")
+        if (target.tag == "Ally" || target.tag == "Tijolo")
         {
             Debug.Log("saiu");
             isPlaced = false;
