@@ -5,26 +5,30 @@ using UnityEngine.UI;
 
 public class BaseScript : MonoBehaviour
 {
-    public int baseHP;
-    public int healing;
+    public float baseHP;
+    public float healing;
+    public float initialBaseHP;
 
     public GameObject GameOverPanel;
     
     void Start()
     {
-        
+        baseHP = initialBaseHP;
     }
     void Update()
     {
-        
+        if (baseHP < initialBaseHP)
+        {
+            baseHP += healing;
+        }
     }
 
-    void OnTriggerEnter2D(Collider2D target)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if (target.tag == "Enemy")
+        if (col.tag == "Enemy")
         {
-            baseHP--;
-            if(baseHP <= 0)
+            baseHP -= 1f;
+            if (baseHP <= 0)
             {
                 GameOver();
             }

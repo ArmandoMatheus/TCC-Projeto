@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9221186927257340460}
   - component: {fileID: 3279896171641702817}
   - component: {fileID: 4170852417181833403}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Tijolo
   m_TagString: Tijolo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8635841542499749679}
   - component: {fileID: 8635841542499749678}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Tijolo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

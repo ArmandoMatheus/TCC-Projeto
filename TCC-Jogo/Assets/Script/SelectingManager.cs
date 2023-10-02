@@ -37,27 +37,27 @@ public class SelectingManager : MonoBehaviour
     }
     public void Select1()
     {
-        if (TrashManager.vidroN >= 3 && TrashManager.plasticoN >= 2 && TrashManager.papelN >= 2)
+        if (TrashManager.vidroN >= 1 && TrashManager.plasticoN >= 1 && TrashManager.papelN >= 1)
         {
             unitSelected = unitOptions[0];
             isSelecting = true;
             pVidro = 1;
             pMetal = 0;
-            pPapel = 2;
-            pPlastico = 2;
+            pPapel = 1;
+            pPlastico = 1;
             AttText();            
         }
     }
 
     public void Select2()
     {
-        if (TrashManager.metalN >= 3 && TrashManager.plasticoN >= 1 && TrashManager.papelN >= 1)
+        if (TrashManager.metalN >= 2 && TrashManager.plasticoN >= 1)
         {
             unitSelected = unitOptions[1];
             isSelecting = true;
             pVidro = 0;
-            pMetal = 3;
-            pPapel = 1;
+            pMetal = 2;
+            pPapel = 0;
             pPlastico = 1;
             AttText();
         }
@@ -65,14 +65,14 @@ public class SelectingManager : MonoBehaviour
 
     public void Select3()
     {
-        if (TrashManager.vidroN >= 2 && TrashManager.papelN >= 2 && TrashManager.plasticoN >= 1)
+        if (TrashManager.vidroN >= 1 && TrashManager.papelN >= 1 && TrashManager.metalN >= 1)
         {
             unitSelected = unitOptions[2];
             isSelecting = true;
-            pVidro = 2;
-            pMetal = 0;
-            pPapel = 2;
-            pPlastico = 1;
+            pVidro = 1;
+            pMetal = 1;
+            pPapel = 1;
+            pPlastico = 0;
             AttText();
         }
     }

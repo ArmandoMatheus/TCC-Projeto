@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4830371401740897834}
   - component: {fileID: 7874882040119252108}
   - component: {fileID: 8428655242173742567}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Pneira
   m_TagString: Ally
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -82,7 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7035252872442046814}
   - component: {fileID: 7035252872442046815}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: PneiraImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

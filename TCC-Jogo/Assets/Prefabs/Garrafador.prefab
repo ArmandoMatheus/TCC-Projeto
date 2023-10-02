@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2848838819659659845}
   - component: {fileID: 2848838819659659846}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: GarrafadorImagem
   m_TagString: Ally
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2848838819707935633}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 1505071956364234822}
   - component: {fileID: 6310477966344247066}
   - component: {fileID: 2790050784827181273}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Garrafador
   m_TagString: Ally
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -210,8 +210,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 4941446480672893300, guid: 97f67a81e3ee18545ab804d3e5d44856, type: 3}
   BulletSpawnPoint: {fileID: 2848838819707935633}
-  enemyDetection: {fileID: 2848838821495110984}
   bulletTimer: 1
+  shootRange: 10
 --- !u!114 &2790050784827181273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 2848838821495110986}
   - component: {fileID: 2848838821495110985}
   - component: {fileID: 2848838821495110984}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: EnemyDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}

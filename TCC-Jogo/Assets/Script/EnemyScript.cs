@@ -9,27 +9,29 @@ public class EnemyScript : MonoBehaviour
     public bool canBeHit;
     int lootNum;
 
-    public bool hitPlayer = false;
-
     public GameObject[] trashLoot;
     public GameObject attack;
     public Transform attackSpawnPos;
     public float attackTimer, currentAttackTimer;
 
-    public EnemyDetection enemyDetection;    
-    
+    public float attackRange;
+
     void Update()
     {
-        if (!hitPlayer)
-        {
-            Move();
-        }
         currentAttackTimer -= Time.deltaTime;
         if (enemyHP <= 0)
         {
             Die();
         }
-        Attack();
+
+        if (CanSeePlayer(attackRange))
+        {
+            Attack();
+        }
+        else
+        {
+            Move();
+        }
     }
     void Move()
     {
@@ -43,14 +45,6 @@ public class EnemyScript : MonoBehaviour
         {
             enemyHP--;
         }
-        if (target.tag == "Ally")
-        {
-            hitPlayer = true;
-        }
-        if(target.tag == "Base")
-        {
-            Die();
-        }
     }
     private void OnTriggerStay2D(Collider2D target)
     {
@@ -58,12 +52,9 @@ public class EnemyScript : MonoBehaviour
         {
             enemyHP -= Time.deltaTime * 0.5f;
         }
-    }
-    void OnTriggerExit2D(Collider2D target)
-    {        
-        if (target.tag == "Ally")
+        if(target.tag == "Base")
         {
-            hitPlayer = false;
+            Die();
         }
     }
     void Die()
@@ -77,10 +68,35 @@ public class EnemyScript : MonoBehaviour
     }
     void Attack()
     {
-        if (enemyDetection.seeAlly && currentAttackTimer <= 0)
+        if (currentAttackTimer <= 0)
         {
             Instantiate(attack, attackSpawnPos.position, attackSpawnPos.rotation);
             currentAttackTimer = attackTimer;
         }
+    }
+    bool CanSeePlayer(float range)
+    {
+        bool val = false;
+        float castDist = -range;
+        Vector2 endPos = attackSpawnPos.position + Vector3.right * castDist;
+        RaycastHit2D hit = Physics2D.Linecast(attackSpawnPos.position, endPos, 1 << LayerMask.NameToLayer("PlayerLayer"));
+
+        if (hit.collider != null)
+        {
+            if (hit.collider.gameObject.CompareTag("Ally"))
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+            Debug.DrawLine(attackSpawnPos.position, hit.point, Color.red);
+        }
+        else
+        {
+            Debug.DrawLine(attackSpawnPos.position, endPos, Color.green);
+        }
+        return val;
     }
 }

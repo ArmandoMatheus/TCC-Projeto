@@ -7,7 +7,7 @@ public class TrashLootScript : MonoBehaviour
     public bool isMetal, isVidro, isPapel, isPlastico;
     float moveX, moveY, timerX = 1f, timerY = 1f;
     bool setValues = true;
-    float collectTime = 3f;
+    float collectTime = 2f;
     void Update()
     {
         Move();

@@ -6,9 +6,10 @@ public class ShooterScript : MonoBehaviour
 {
     public GameObject BulletPrefab;
     public Transform BulletSpawnPoint;
-    public EnemyDetection enemyDetection;
 
     public float bulletTimer;
+    public float shootRange;
+
    
     /*
     public bool canShoot;
@@ -19,7 +20,11 @@ public class ShooterScript : MonoBehaviour
     void Update()
     {
         ShootTimer();
-        Fire();       
+
+        if (CanSeeEnemy(shootRange))
+        {
+            Fire();
+        }        
     }
     void ShootTimer()
     {
@@ -27,10 +32,36 @@ public class ShooterScript : MonoBehaviour
     }
     void Fire()
     {
-        if (enemyDetection.seeEnemy == true && bulletTimer < 0)
+        if (bulletTimer < 0)
         {
             Instantiate(BulletPrefab, BulletSpawnPoint.position, BulletSpawnPoint.rotation);
             bulletTimer = 1;
         }
+    }
+
+    bool CanSeeEnemy(float range)
+    {
+        bool val = false;
+        float castDist = range;
+        Vector2 endPos = BulletSpawnPoint.position + Vector3.right * castDist;
+        RaycastHit2D hit = Physics2D.Linecast(BulletSpawnPoint.position, endPos, 1<< LayerMask.NameToLayer("Ignore Raycast"));
+
+        if(hit.collider != null)
+        {
+            if (hit.collider.gameObject.CompareTag("Enemy"))
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+            Debug.DrawLine(BulletSpawnPoint.position, hit.point, Color.red);
+        }
+        else
+        {
+            Debug.DrawLine(BulletSpawnPoint.position, endPos, Color.green);
+        }
+        return val;
     }
 }
