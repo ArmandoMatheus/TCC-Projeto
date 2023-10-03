@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomebaseScript : MonoBehaviour
+public class LixeiraScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

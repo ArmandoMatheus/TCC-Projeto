@@ -15,10 +15,17 @@ public class EnemyScript : MonoBehaviour
     public float attackTimer, currentAttackTimer;
 
     public float attackRange;
+    public bool isSlashed;
 
     void Update()
     {
         currentAttackTimer -= Time.deltaTime;
+
+        if (isSlashed)
+        {
+            enemyHP -= Time.deltaTime;
+        }
+        
         if (enemyHP <= 0)
         {
             Die();
@@ -45,17 +52,22 @@ public class EnemyScript : MonoBehaviour
         {
             enemyHP--;
         }
-    }
-    private void OnTriggerStay2D(Collider2D target)
-    {
-        if(target.tag == "Tijolo")
-        {
-            enemyHP -= Time.deltaTime * 0.5f;
-        }
-        if(target.tag == "Base")
+        if (target.tag == "Base" || target.tag == "Lixeira")
         {
             Die();
         }
+        if (target.tag == "Tijolo")
+        {
+            isSlashed = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D target)
+    {
+        if(target.tag == "Tijolo")
+        {
+            isSlashed = false;
+        }
+        
     }
     void Die()
     {
