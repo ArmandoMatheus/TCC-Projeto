@@ -10,6 +10,7 @@ TagManager:
   - EnemyAttack
   - Base
   - Tijolo
+  - Lixeira
   layers:
   - Default
   - TransparentFX
