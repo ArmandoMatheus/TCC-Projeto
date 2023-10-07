@@ -24,6 +24,7 @@ public class TrashLootScript : MonoBehaviour
             {
                 moveX = 0;
                 moveY = 1f;
+                collectTime = 1f;
             }
             else
             {

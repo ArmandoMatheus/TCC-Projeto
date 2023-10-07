@@ -26,7 +26,7 @@ public class EnemySpawnScript : MonoBehaviour
     {
         if (timer > 2f)
         {
-            timer -= Time.deltaTime * .005f;
+            timer -= Time.deltaTime * .010f;
         }
     }
 }

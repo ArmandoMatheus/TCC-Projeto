@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2777415335006511248}
   - component: {fileID: 6604346355210366748}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: lixoamarelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 434294371dcd5ba4e99611177116030b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4274100819587726645}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LootSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,9 +125,9 @@ GameObject:
   - component: {fileID: 7465446254421429579}
   - component: {fileID: 4884750407145579802}
   - component: {fileID: 5894185613682782449}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LixeiraMetal
-  m_TagString: Untagged
+  m_TagString: Ally
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

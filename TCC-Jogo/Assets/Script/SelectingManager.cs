@@ -86,38 +86,75 @@ public class SelectingManager : MonoBehaviour
 
     public void Select4()
     {
-        unitSelected = unitOptions[3];
-        isSelecting = true;
+        if (TrashManager.vidroN >= 1 && TrashManager.papelN >= 1 && TrashManager.metalN >= 1)
+        {
+            unitSelected = unitOptions[3];
+            isSelecting = true;
+        }
     }
 
     public void Select5()
     {
-        reciclavelSelectWindow.SetActive(true);
-        isSelecting = true;
+        
+            reciclavelSelectWindow.SetActive(true);
+            isSelecting = true;
+        
     }
     public void Select5_1()
     {
-        unitSelected = unitOptions[4];
-        isSelecting = true;
-        reciclavelSelectWindow.SetActive(false);
+        if (TrashManager.vidroN >= 1 && TrashManager.papelN >= 1 && TrashManager.metalN >= 1)
+        {
+            unitSelected = unitOptions[4];
+            isSelecting = true;
+            reciclavelSelectWindow.SetActive(false);
+            pVidro = 1;
+            pMetal = 1;
+            pPapel = 1;
+            pPlastico = 0;
+            AttText();
+        }
     }
     public void Select5_2()
     {
-        unitSelected = unitOptions[5];
-        isSelecting = true;
-        reciclavelSelectWindow.SetActive(false);
+        if (TrashManager.vidroN >= 1 && TrashManager.papelN >= 1 && TrashManager.plasticoN >= 1)
+        {
+            unitSelected = unitOptions[5];
+            isSelecting = true;
+            reciclavelSelectWindow.SetActive(false);
+            pVidro = 1;
+            pMetal = 0;
+            pPapel = 1;
+            pPlastico = 1;
+            AttText();
+        }
     }
     public void Select5_3()
     {
-        unitSelected = unitOptions[6];
-        isSelecting = true;
-        reciclavelSelectWindow.SetActive(false);
+        if (TrashManager.vidroN >= 1 && TrashManager.plasticoN >= 1 && TrashManager.metalN >= 1)
+        {
+            unitSelected = unitOptions[6];
+            isSelecting = true;
+            reciclavelSelectWindow.SetActive(false);
+            pVidro = 1;
+            pMetal = 1;
+            pPapel = 0;
+            pPlastico = 1;
+            AttText();
+        }
     }
     public void Select5_4()
     {
-        unitSelected = unitOptions[7];
-        isSelecting = true;
-        reciclavelSelectWindow.SetActive(false);
+        if (TrashManager.plasticoN >= 1 && TrashManager.papelN >= 1 && TrashManager.metalN >= 1)
+        {
+            unitSelected = unitOptions[7];
+            isSelecting = true;
+            reciclavelSelectWindow.SetActive(false);
+            pVidro = 0;
+            pMetal = 1;
+            pPapel = 1;
+            pPlastico = 1;
+            AttText();
+        }
     }
 
     public void CancelSelect()
