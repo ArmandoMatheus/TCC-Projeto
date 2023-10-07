@@ -13,6 +13,13 @@ public class SelectingManager : MonoBehaviour
     public int pVidro, pMetal, pPapel, pPlastico;
     public TMP_Text pVidroText, pMetalText, pPapelText, pPlasticoText;
 
+    public GameObject reciclavelSelectWindow;
+
+    private void Start()
+    {
+        reciclavelSelectWindow.SetActive(false);
+    }
+
     void Update()
     {
         if (isSelecting)
@@ -85,8 +92,32 @@ public class SelectingManager : MonoBehaviour
 
     public void Select5()
     {
+        reciclavelSelectWindow.SetActive(true);
+        isSelecting = true;
+    }
+    public void Select5_1()
+    {
         unitSelected = unitOptions[4];
         isSelecting = true;
+        reciclavelSelectWindow.SetActive(false);
+    }
+    public void Select5_2()
+    {
+        unitSelected = unitOptions[5];
+        isSelecting = true;
+        reciclavelSelectWindow.SetActive(false);
+    }
+    public void Select5_3()
+    {
+        unitSelected = unitOptions[6];
+        isSelecting = true;
+        reciclavelSelectWindow.SetActive(false);
+    }
+    public void Select5_4()
+    {
+        unitSelected = unitOptions[7];
+        isSelecting = true;
+        reciclavelSelectWindow.SetActive(false);
     }
 
     public void CancelSelect()
