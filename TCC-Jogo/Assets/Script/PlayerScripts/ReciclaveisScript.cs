@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class ReciclaveisScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject lootSpawn;
+    public Transform lootPosition;
+    public float lootTimer;
+    public float initialLootTimer;
+
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        lootTimer -= Time.deltaTime;
+        if(lootTimer <= 0)
+        {
+            Instantiate(lootSpawn, lootPosition.position, lootPosition.rotation);
+            lootTimer = initialLootTimer;
+        }
     }
 }

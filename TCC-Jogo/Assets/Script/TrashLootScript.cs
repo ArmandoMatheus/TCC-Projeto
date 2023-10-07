@@ -8,6 +8,8 @@ public class TrashLootScript : MonoBehaviour
     float moveX, moveY, timerX = 1f, timerY = 1f;
     bool setValues = true;
     float collectTime = 2f;
+    public bool isLoot;
+
     void Update()
     {
         Move();
@@ -15,10 +17,19 @@ public class TrashLootScript : MonoBehaviour
     }
     void Move()
     {
+        
         if (setValues)
         {
-            moveX = Random.Range(-.5f, .5f);
-            moveY = Random.Range(-.5f, .5f);
+            if (isLoot)
+            {
+                moveX = 0;
+                moveY = 1f;
+            }
+            else
+            {
+                moveX = Random.Range(-.5f, .5f);
+                moveY = Random.Range(-.5f, .5f);
+            }
             setValues = false;
         }
         Vector3 temp = transform.position;
