@@ -12,7 +12,7 @@ public class TijoloScript : MonoBehaviour
     {
         if (isHitted)
         {
-            tijoloHP -= Time.deltaTime * 0.5f;
+            tijoloHP -= Time.deltaTime;
             if (tijoloHP < 0)
             {
                 Die();

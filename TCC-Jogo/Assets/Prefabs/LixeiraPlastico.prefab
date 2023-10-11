@@ -179,8 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootSpawn: {fileID: 7034024057223650709, guid: afd3d95de594ade40be03e45d1d32dc0, type: 3}
   lootPosition: {fileID: 154827909954057355}
-  lootTimer: 4
-  initialLootTimer: 4
+  lootTimer: 6
+  initialLootTimer: 6
 --- !u!114 &1238916753292878424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d439b4c861e124c9153e41d4260797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitHP: 5
+  unitHP: 4
 --- !u!1 &8555645632363467960
 GameObject:
   m_ObjectHideFlags: 0

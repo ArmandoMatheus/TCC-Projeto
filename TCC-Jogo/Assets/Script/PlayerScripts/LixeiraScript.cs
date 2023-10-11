@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class LixeiraScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public int lixeiraHP;
     void Update()
     {
-        
+        if(lixeiraHP <= 0)
+        {
+            Die();
+        }
+    }
+    void OnTriggerEnter2D(Collider2D target)
+    {
+        if (target.tag == "Enemy")
+        {
+            lixeiraHP--;
+        }
+    }
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }

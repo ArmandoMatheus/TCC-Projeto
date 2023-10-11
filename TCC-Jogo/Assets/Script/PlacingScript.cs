@@ -37,7 +37,7 @@ public class PlacingScript : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D target)
     {
-        if (target.tag == "Ally" || target.tag == "Tijolo")
+        if (target.tag == "Ally" || target.tag == "Tijolo" || target.tag == "Lixeira")
         {
             Debug.Log("saiu");
             isPlaced = false;

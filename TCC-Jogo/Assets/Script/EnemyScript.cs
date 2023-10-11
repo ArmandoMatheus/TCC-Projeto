@@ -23,7 +23,7 @@ public class EnemyScript : MonoBehaviour
 
         if (isSlashed)
         {
-            enemyHP -= Time.deltaTime;
+            enemyHP -= Time.deltaTime * 2;
         }
         
         if (enemyHP <= 0)

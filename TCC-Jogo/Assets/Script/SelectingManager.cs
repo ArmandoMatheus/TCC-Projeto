@@ -86,10 +86,15 @@ public class SelectingManager : MonoBehaviour
 
     public void Select4()
     {
-        if (TrashManager.vidroN >= 1 && TrashManager.papelN >= 1 && TrashManager.metalN >= 1)
+        if (TrashManager.plasticoN >= 1 && TrashManager.metalN >= 1)
         {
             unitSelected = unitOptions[3];
             isSelecting = true;
+            pVidro = 0;
+            pMetal = 1;
+            pPapel = 0;
+            pPlastico = 1;
+            AttText();
         }
     }
 
@@ -160,6 +165,7 @@ public class SelectingManager : MonoBehaviour
     public void CancelSelect()
     {
         isSelecting = false;
+        reciclavelSelectWindow.SetActive(false);
         pVidro = 0;
         pMetal = 0;
         pPapel = 0;
