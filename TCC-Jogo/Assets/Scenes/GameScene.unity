@@ -2055,6 +2055,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPool:
   - {fileID: 6302645279964776104, guid: f981b4679ac956f418ef486fd0ea8d7d, type: 3}
+  - {fileID: 6302645279964776104, guid: f981b4679ac956f418ef486fd0ea8d7d, type: 3}
+  - {fileID: 6302645279964776104, guid: f981b4679ac956f418ef486fd0ea8d7d, type: 3}
+  - {fileID: 6302645279964776104, guid: f981b4679ac956f418ef486fd0ea8d7d, type: 3}
+  - {fileID: 6302645279964776104, guid: f981b4679ac956f418ef486fd0ea8d7d, type: 3}
+  - {fileID: 4205386625031035816, guid: cc0a0a8e67fa6b140a8925465fb52ebb, type: 3}
   enemyPos:
   - {fileID: 1195240445}
   - {fileID: 258899846}
@@ -12815,7 +12820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4205386625031035820, guid: cc0a0a8e67fa6b140a8925465fb52ebb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.08
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 4205386625031035820, guid: cc0a0a8e67fa6b140a8925465fb52ebb, type: 3}
       propertyPath: m_LocalPosition.y

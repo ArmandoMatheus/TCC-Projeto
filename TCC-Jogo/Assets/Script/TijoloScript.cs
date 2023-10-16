@@ -5,12 +5,12 @@ using UnityEngine;
 public class TijoloScript : MonoBehaviour
 {
     public float tijoloHP;
-    public bool isHitted = false;
+    public bool isSlashing = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (isHitted)
+        if (isSlashing)
         {
             tijoloHP -= Time.deltaTime;
             if (tijoloHP < 0)
@@ -25,7 +25,7 @@ public class TijoloScript : MonoBehaviour
         if(col.tag == "Enemy")
         {
             Debug.Log("detecrtantopd");
-            isHitted = true;
+            isSlashing = true;
         }
     }
     void OnTriggerExit2D(Collider2D col)
@@ -33,7 +33,7 @@ public class TijoloScript : MonoBehaviour
         if (col.tag == "Enemy")
         {
             Debug.Log("detecrtantopd");
-            isHitted = false;
+            isSlashing = false;
         }
     }
     void Die()
