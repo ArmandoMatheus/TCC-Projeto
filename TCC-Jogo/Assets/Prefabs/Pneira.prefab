@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4830371401740897834}
   - component: {fileID: 7874882040119252108}
   - component: {fileID: 8428655242173742567}
+  - component: {fileID: -8979647354728299041}
   m_Layer: 6
   m_Name: Pneira
   m_TagString: Ally
@@ -72,6 +73,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitHP: 10
+--- !u!50 &-8979647354728299041
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6628113842287402039}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
 --- !u!1 &7035252872442046787
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class PneuScript : MonoBehaviour
     public float pneuFowardSpeed;
     public float pneuBackwardSpeed;
     float retreatTime;
-    float moveTimer;
+    float moveTimer = 1f;
     bool isRetreating = false;
 
     void Update()
@@ -27,6 +27,13 @@ public class PneuScript : MonoBehaviour
         {
             Retreat();
         }
+
+        if(pneuHP <= 0)
+        {
+            Die();
+        }
+
+        moveTimer -= Time.deltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D target)
@@ -37,7 +44,9 @@ public class PneuScript : MonoBehaviour
         }
         if (target.tag == "Ally")
         {
-            float retreatTime = 2f;
+            retreatTime = 2f;
+            moveTimer = 4f;
+            isRetreating = true;
         }
         if (target.tag == "Base" || target.tag == "Lixeira")
         {
@@ -70,15 +79,20 @@ public class PneuScript : MonoBehaviour
             Vector3 temp = transform.position;
             temp.x += pneuBackwardSpeed * Time.deltaTime;
             transform.position = temp;
+            retreatTime -= Time.deltaTime;
         }
         else
         {
             isRetreating = false;
-            moveTimer = 2f;
         }
     }
     void Die()
     {
+        int lootNum = Random.Range(2, 3);
+        for (int i = 0; i < lootNum; i++)
+        {
+            Instantiate(pneuTrashLoot[Random.Range(0, 4)], transform.position, transform.rotation);
+        }
         Destroy(gameObject);
     }
 }

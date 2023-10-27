@@ -7,7 +7,6 @@ public class EnemyScript : MonoBehaviour
     public float enemyHP = 7;
     public float enemySpeed = 1f;
     public bool canBeHit;
-    int lootNum;
 
     public GameObject[] trashLoot;
     public GameObject attack;
@@ -71,7 +70,7 @@ public class EnemyScript : MonoBehaviour
     }
     void Die()
     {
-        lootNum = Random.Range(2, 3);
+        int lootNum = Random.Range(2, 3);
         for (int i = 0; i < lootNum; i++)
         {
             Instantiate(trashLoot[Random.Range(0, 4)], transform.position, transform.rotation);

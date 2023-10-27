@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4205386625031035819}
   m_Layer: 0
   m_Name: Pnelson
-  m_TagString: Untagged
+  m_TagString: Pneu
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +65,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.017122269, y: -0.08812696}
@@ -99,7 +99,7 @@ MonoBehaviour:
   - {fileID: 2861749899235350849, guid: ff17af0742ee942418de13e300d427b3, type: 3}
   - {fileID: 8366672667756292125, guid: 5ff2f9f165ad4484eb46978a60aa5fea, type: 3}
   - {fileID: 4532838267569445734, guid: 911371a5abe418e418fd8fd860c140fe, type: 3}
-  pneuFowardSpeed: 10
+  pneuFowardSpeed: 9
   pneuBackwardSpeed: 3
 --- !u!1 &4205386625036743200
 GameObject:

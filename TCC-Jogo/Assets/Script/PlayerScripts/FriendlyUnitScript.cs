@@ -18,6 +18,10 @@ public class FriendlyUnitScript : MonoBehaviour
         {            
             unitHP--;            
         }
+        if (target.tag == "Pneu")
+        {
+            unitHP -= 2;
+        }
     }
     void Die()
     {
