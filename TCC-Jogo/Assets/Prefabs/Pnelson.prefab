@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4205386625031035821}
   - component: {fileID: 4205386625031035818}
   - component: {fileID: 4205386625031035819}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pnelson
   m_TagString: Pneu
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4205386625036743202}
   - component: {fileID: 4205386625036743203}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pnelson
   m_TagString: Untagged
   m_Icon: {fileID: 0}

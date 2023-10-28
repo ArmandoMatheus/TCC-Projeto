@@ -48,7 +48,7 @@ public class ShooterScript : MonoBehaviour
 
         if(hit.collider != null)
         {
-            if (hit.collider.gameObject.CompareTag("Enemy"))
+            if (hit.collider.gameObject.CompareTag("Enemy") || hit.collider.gameObject.CompareTag("Pneu"))
             {
                 val = true;
             }

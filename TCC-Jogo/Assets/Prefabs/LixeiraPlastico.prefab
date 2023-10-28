@@ -179,8 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootSpawn: {fileID: 7034024057223650709, guid: afd3d95de594ade40be03e45d1d32dc0, type: 3}
   lootPosition: {fileID: 154827909954057355}
-  lootTimer: 6
-  initialLootTimer: 6
+  lootTimer: 8
+  initialLootTimer: 8
 --- !u!114 &1238916753292878424
 MonoBehaviour:
   m_ObjectHideFlags: 0

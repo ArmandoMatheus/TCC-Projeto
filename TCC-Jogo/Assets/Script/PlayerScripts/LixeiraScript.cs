@@ -14,7 +14,7 @@ public class LixeiraScript : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D target)
     {
-        if (target.tag == "Enemy")
+        if (target.tag == "Enemy" || target.tag == "Pneu")
         {
             lixeiraHP--;
         }

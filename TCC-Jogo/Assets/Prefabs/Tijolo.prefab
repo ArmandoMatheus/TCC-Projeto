@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tijoloHP: 7
+  isSlashing: 0
 --- !u!1 &8635841542499749677
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +106,7 @@ GameObject:
   - component: {fileID: 8635841542499749679}
   - component: {fileID: 8635841542499749678}
   m_Layer: 0
-  m_Name: Tijolo
+  m_Name: TijoloImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
