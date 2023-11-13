@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FriendlyUnitScript : MonoBehaviour
 {
-    public int unitHP;
+    public float unitHP;
     void Update()
     {
         if (unitHP <= 0)
@@ -16,11 +16,11 @@ public class FriendlyUnitScript : MonoBehaviour
     {
         if(target.tag == "EnemyAttack")
         {            
-            unitHP--;            
+            unitHP -= DifControlScript.enemyDamVal;            
         }
         if (target.tag == "Pneu")
         {
-            unitHP -= 2;
+            unitHP -= DifControlScript.pneuDamVal;
         }
     }
     void Die()

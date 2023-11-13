@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     public float enemyHP = 7;
-    public float enemySpeed = 1f;
+    public float enemySpeed;
     public bool canBeHit;
 
     public GameObject[] trashLoot;
@@ -15,6 +15,8 @@ public class EnemyScript : MonoBehaviour
 
     public float attackRange;
     public bool isSlashed;
+
+    bool haveModifier = false;
 
     void Update()
     {
@@ -37,6 +39,12 @@ public class EnemyScript : MonoBehaviour
         else
         {
             Move();
+        }
+
+        if (!haveModifier)
+        {
+            AddModifierVal();
+            haveModifier = true;
         }
     }
     void Move()
@@ -109,5 +117,11 @@ public class EnemyScript : MonoBehaviour
             Debug.DrawLine(attackSpawnPos.position, endPos, Color.green);
         }
         return val;
+    }
+
+    void AddModifierVal()
+    {
+        enemyHP += DifControlScript.enemylifeVal;
+        enemySpeed += DifControlScript.enemyVelVal;
     }
 }

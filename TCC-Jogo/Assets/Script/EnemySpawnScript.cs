@@ -6,15 +6,16 @@ public class EnemySpawnScript : MonoBehaviour
 {
     public GameObject[] enemyPool;
     public Transform[] enemyPos;
+    public DifControlScript difScript;
 
     public float timer;
 
-    void Start()
+    public void StartSpawn()
     {
+        timer = difScript.timerVal;
         Invoke("Spawn", timer);
     }
 
-    // Update is called once per frame
     void Spawn()
     {
         Instantiate(enemyPool[Random.Range(0, enemyPool.Length)], enemyPos[Random.Range(0, enemyPos.Length)].transform.position, Quaternion.identity);

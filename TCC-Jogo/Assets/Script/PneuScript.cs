@@ -13,6 +13,9 @@ public class PneuScript : MonoBehaviour
     float moveTimer = 1f;
     bool isRetreating = false;
 
+    bool haveModifier = false;
+
+
     void Update()
     {
         if (isSlashed)
@@ -31,6 +34,12 @@ public class PneuScript : MonoBehaviour
         if(pneuHP <= 0)
         {
             Die();
+        }
+
+        if(!haveModifier)
+        {
+            AddDifModifier();
+            haveModifier = true;
         }
 
         moveTimer -= Time.deltaTime;
@@ -94,5 +103,12 @@ public class PneuScript : MonoBehaviour
             Instantiate(pneuTrashLoot[Random.Range(0, 4)], transform.position, transform.rotation);
         }
         Destroy(gameObject);
+    }
+
+    void AddDifModifier()
+    {
+        pneuHP += DifControlScript.pneulifeVal;
+        pneuFowardSpeed += DifControlScript.pneuVelVal;
+        pneuBackwardSpeed += DifControlScript.pneuVelVal;
     }
 }
