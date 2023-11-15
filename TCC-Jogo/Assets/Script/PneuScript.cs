@@ -15,12 +15,16 @@ public class PneuScript : MonoBehaviour
 
     bool haveModifier = false;
 
+    public SpriteRenderer spritePneu;
+    float damageTimer = 0f;
+
 
     void Update()
     {
         if (isSlashed)
         {
             pneuHP -= Time.deltaTime * 5;
+            damageTimer = .2f;
         }
         if(moveTimer < 0)
         {
@@ -42,6 +46,8 @@ public class PneuScript : MonoBehaviour
             haveModifier = true;
         }
 
+        GetDamage();
+
         moveTimer -= Time.deltaTime;
     }
 
@@ -50,6 +56,7 @@ public class PneuScript : MonoBehaviour
         if (target.tag == "Bullet")
         {
             pneuHP--;
+            damageTimer = .2f;
         }
         if (target.tag == "Ally")
         {
@@ -63,7 +70,7 @@ public class PneuScript : MonoBehaviour
         }
         if (target.tag == "Tijolo")
         {
-            isSlashed = true;
+            isSlashed = true;            
         }
     }
 
@@ -110,5 +117,18 @@ public class PneuScript : MonoBehaviour
         pneuHP += DifControlScript.pneulifeVal;
         pneuFowardSpeed += DifControlScript.pneuVelVal;
         pneuBackwardSpeed += DifControlScript.pneuVelVal;
+    }
+
+    public void GetDamage()
+    {
+        if (damageTimer > 0)
+        {
+            spritePneu.color = new Color32(255, 0, 0, 255);
+        }
+        else
+        {
+            spritePneu.color = new Color32(255, 255, 255, 255);
+        }
+        damageTimer -= Time.deltaTime;
     }
 }

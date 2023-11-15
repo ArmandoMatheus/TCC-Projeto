@@ -78,9 +78,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 7
-  enemySpeed: 2
+  enemySpeed: 1
   canBeHit: 0
-  hitPlayer: 0
   trashLoot:
   - {fileID: 8366672667756292125, guid: 5ff2f9f165ad4484eb46978a60aa5fea, type: 3}
   - {fileID: 2861749899235350849, guid: ff17af0742ee942418de13e300d427b3, type: 3}
@@ -90,8 +89,9 @@ MonoBehaviour:
   attackSpawnPos: {fileID: 1973595540}
   attackTimer: 2
   currentAttackTimer: 2
-  enemyDetection: {fileID: 0}
   attackRange: 1.79
+  isSlashed: 0
+  spriteLixo: {fileID: 6302645280442240280}
 --- !u!61 &6302645279964776118
 BoxCollider2D:
   m_ObjectHideFlags: 0

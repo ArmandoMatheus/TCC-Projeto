@@ -13,7 +13,8 @@ public class EnemySpawnScript : MonoBehaviour
     public void StartSpawn()
     {
         timer = difScript.timerVal;
-        Invoke("Spawn", timer);
+        float initialTimer = 2f;
+        Invoke("Spawn", initialTimer);
     }
 
     void Spawn()

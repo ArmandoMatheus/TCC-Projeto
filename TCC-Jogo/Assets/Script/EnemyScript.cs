@@ -18,6 +18,9 @@ public class EnemyScript : MonoBehaviour
 
     bool haveModifier = false;
 
+    public SpriteRenderer spriteLixo;
+    float damageTimer;
+
     void Update()
     {
         currentAttackTimer -= Time.deltaTime;
@@ -25,6 +28,7 @@ public class EnemyScript : MonoBehaviour
         if (isSlashed)
         {
             enemyHP -= Time.deltaTime * 2;
+            damageTimer = .2f;
         }
         
         if (enemyHP <= 0)
@@ -43,9 +47,12 @@ public class EnemyScript : MonoBehaviour
 
         if (!haveModifier)
         {
-            AddModifierVal();
+            AddModifier();
             haveModifier = true;
         }
+
+        GetDamage();
+
     }
     void Move()
     {
@@ -58,6 +65,7 @@ public class EnemyScript : MonoBehaviour
         if (target.tag == "Bullet")
         {
             enemyHP--;
+            damageTimer = .2f;
         }
         if (target.tag == "Base" || target.tag == "Lixeira")
         {
@@ -119,9 +127,22 @@ public class EnemyScript : MonoBehaviour
         return val;
     }
 
-    void AddModifierVal()
+    void AddModifier()
     {
         enemyHP += DifControlScript.enemylifeVal;
         enemySpeed += DifControlScript.enemyVelVal;
+    }
+
+    public void GetDamage()
+    {
+        if (damageTimer > 0)
+        {
+            spriteLixo.color = new Color32(255, 0, 0, 255);
+        }
+        else
+        {
+            spriteLixo.color = new Color32(255, 255, 255, 255);
+        }
+        damageTimer -= Time.deltaTime;
     }
 }
