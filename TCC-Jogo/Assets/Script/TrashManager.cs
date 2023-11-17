@@ -5,7 +5,7 @@ using TMPro;
 
 public class TrashManager : MonoBehaviour
 {
-    public static int metalN =5, vidroN=5, papelN=5, plasticoN=5;
+    public static int metalN = 5, vidroN = 5, papelN = 5, plasticoN = 5;
     public TMP_Text metalText, vidroText, papelText, plasticoText;
     void Start()
     {

@@ -67,7 +67,11 @@ public class EnemyScript : MonoBehaviour
             enemyHP--;
             damageTimer = .2f;
         }
-        if (target.tag == "Base" || target.tag == "Lixeira")
+        if (target.tag == "Base")
+        {
+            GotToBase();
+        }
+        if (target.tag == "Lixeira")
         {
             Die();
         }
@@ -86,11 +90,20 @@ public class EnemyScript : MonoBehaviour
     }
     void Die()
     {
-        int lootNum = Random.Range(2, 3);
-        for (int i = 0; i < lootNum; i++)
+        int lootN = 2;
+        for (int i = 0; i < lootN; i++)
         {
             Instantiate(trashLoot[Random.Range(0, 4)], transform.position, transform.rotation);
         }        
+        Destroy(gameObject);
+    }
+    void GotToBase()
+    {
+        int lootN = 2;
+        for (int i = 0; i < lootN; i++)
+        {
+            Instantiate(trashLoot[Random.Range(0, 4)], transform.position, transform.rotation);
+        }
         Destroy(gameObject);
     }
     void Attack()

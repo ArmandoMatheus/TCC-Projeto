@@ -36,6 +36,10 @@ public class BaseScript : MonoBehaviour
     }
     void GameOver()
     {
+        TrashManager.plasticoN = 5;
+        TrashManager.vidroN = 5;
+        TrashManager.papelN = 5;
+        TrashManager.metalN = 5;
         GameOverPanel.SetActive(true);
         Debug.Log("Game Over");
     }

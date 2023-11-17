@@ -64,9 +64,13 @@ public class PneuScript : MonoBehaviour
             moveTimer = 4f;
             isRetreating = true;
         }
-        if (target.tag == "Base" || target.tag == "Lixeira")
+        if (target.tag == "Lixeira")
         {
             Die();
+        }
+        if(target.tag == "Base")
+        {
+            GotToBase();
         }
         if (target.tag == "Tijolo")
         {
@@ -104,8 +108,19 @@ public class PneuScript : MonoBehaviour
     }
     void Die()
     {
-        int lootNum = Random.Range(2, 3);
-        for (int i = 0; i < lootNum; i++)
+        int lootN = 2;
+        for (int i = 0; i < lootN; i++)
+        {
+            Instantiate(pneuTrashLoot[Random.Range(0, 4)], transform.position, transform.rotation);
+        }
+        Destroy(gameObject);
+
+    }
+
+    void GotToBase()
+    {
+        int lootN = 2;
+        for (int i = 0; i < lootN; i++)
         {
             Instantiate(pneuTrashLoot[Random.Range(0, 4)], transform.position, transform.rotation);
         }

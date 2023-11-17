@@ -10,7 +10,8 @@ public class DifControlScript : MonoBehaviour
     public static float pneuVelVal, enemyVelVal;
     public static float pneuDamVal, enemyDamVal;
 
-    public static int lootNum;
+
+    public static int lootDifNumber;
 
     public int difLevel = 0;
 
@@ -25,6 +26,7 @@ public class DifControlScript : MonoBehaviour
             pneulifeVal = -2; enemylifeVal = -2;
             pneuVelVal = -1; enemyVelVal = -1;
             pneuDamVal = 1; enemyDamVal = .5f;
+        
         }
         if (difLevel == 2)
         {
@@ -73,5 +75,10 @@ public class DifControlScript : MonoBehaviour
         difLevel = 4;
         SetDificulty();
         
+    }
+
+    public void Adaptative()
+    {
+
     }
 }
