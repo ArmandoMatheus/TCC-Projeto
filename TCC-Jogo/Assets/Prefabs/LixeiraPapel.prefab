@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitHP: 4
+  spriteFriend: {fileID: 8247734459858583053}
 --- !u!1 &3509230497751210260
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +154,7 @@ GameObject:
   - component: {fileID: 3539582442683369015}
   - component: {fileID: 8247734459858583053}
   m_Layer: 6
-  m_Name: lixoazul
+  m_Name: lixoazulImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitHP: 4
+  spriteFriend: {fileID: 143764806583974183}
 --- !u!1 &8555645632363467960
 GameObject:
   m_ObjectHideFlags: 0

@@ -73,6 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitHP: 10
+  spriteFriend: {fileID: 7035252872442046815}
 --- !u!50 &-8979647354728299041
 Rigidbody2D:
   serializedVersion: 4

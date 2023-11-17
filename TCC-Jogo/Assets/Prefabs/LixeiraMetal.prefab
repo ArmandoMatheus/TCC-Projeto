@@ -224,3 +224,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitHP: 4
+  spriteFriend: {fileID: 6604346355210366748}

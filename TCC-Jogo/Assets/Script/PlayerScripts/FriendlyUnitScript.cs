@@ -16,6 +16,8 @@ public class FriendlyUnitScript : MonoBehaviour
         {
             Die();
         }
+
+        GetDamage();
     }
     void OnTriggerEnter2D(Collider2D target)
     {
