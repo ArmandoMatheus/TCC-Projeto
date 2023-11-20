@@ -157,7 +157,7 @@ RectTransform:
   - {fileID: 1615716087}
   - {fileID: 760823516}
   m_Father: {fileID: 139953362}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1197,6 +1197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 94423901}
   - component: {fileID: 94423902}
+  - component: {fileID: 94423903}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -1218,7 +1219,7 @@ RectTransform:
   - {fileID: 1692558170}
   - {fileID: 2113994431}
   m_Father: {fileID: 139953362}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1276,6 +1277,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &94423903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94423900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22315afb92187df439ea3c91218ea004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 94423902}
 --- !u!1 &107814123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,10 +1761,10 @@ RectTransform:
   - {fileID: 330984327}
   - {fileID: 1498735019}
   - {fileID: 541436928}
+  - {fileID: 94423901}
   - {fileID: 4653579}
   - {fileID: 777119588}
   - {fileID: 2130040600}
-  - {fileID: 94423901}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6386,7 +6400,7 @@ RectTransform:
   - {fileID: 1245387214}
   - {fileID: 1825808650}
   m_Father: {fileID: 139953362}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9412,6 +9426,7 @@ MonoBehaviour:
   healing: 0.001
   initialBaseHP: 20
   GameOverPanel: {fileID: 4653578}
+  healthBar: {fileID: 94423903}
 --- !u!61 &1303060631
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14580,7 +14595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2130040600
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14594,7 +14609,7 @@ RectTransform:
   m_Children:
   - {fileID: 1540029830}
   m_Father: {fileID: 139953362}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

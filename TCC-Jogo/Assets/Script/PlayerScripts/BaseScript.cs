@@ -10,24 +10,29 @@ public class BaseScript : MonoBehaviour
     public float initialBaseHP;
 
     public GameObject GameOverPanel;
+
+    public HealthBarScript healthBar;
     
     void Start()
     {
         baseHP = initialBaseHP;
+        healthBar.SetMaxHealth(initialBaseHP);
     }
     void Update()
     {
         if (baseHP < initialBaseHP)
         {
             baseHP += healing;
+            healthBar.SetHealth(baseHP);
         }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Enemy")
+        if (col.tag == "Enemy" || col.tag == "Pneu")
         {
             baseHP -= 1f;
+            healthBar.SetHealth(baseHP);
             if (baseHP <= 0)
             {
                 GameOver();
