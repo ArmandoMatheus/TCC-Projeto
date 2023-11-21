@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4532838267569445732}
   - component: {fileID: 4532838267569445735}
   - component: {fileID: 4532838267569445730}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vidro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,4 +115,5 @@ MonoBehaviour:
   isMetal: 0
   isVidro: 1
   isPapel: 0
-  isPlatico: 0
+  isPlastico: 0
+  isLoot: 0

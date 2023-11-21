@@ -9,10 +9,8 @@ public class BaseScript : MonoBehaviour
     public float healing;
     public float initialBaseHP;
 
-    public GameObject GameOverPanel;
-
     public HealthBarScript healthBar;
-    
+    public GameManager manager;    
     void Start()
     {
         baseHP = initialBaseHP;
@@ -26,26 +24,16 @@ public class BaseScript : MonoBehaviour
             healthBar.SetHealth(baseHP);
         }
     }
-
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Enemy" || col.tag == "Pneu")
         {
-            baseHP -= 1f;
+            baseHP--;
             healthBar.SetHealth(baseHP);
             if (baseHP <= 0)
             {
-                GameOver();
+                manager.GameLose();
             }
         }
-    }
-    void GameOver()
-    {
-        TrashManager.plasticoN = 5;
-        TrashManager.vidroN = 5;
-        TrashManager.papelN = 5;
-        TrashManager.metalN = 5;
-        GameOverPanel.SetActive(true);
-        Debug.Log("Game Over");
-    }
+    }   
 }

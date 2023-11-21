@@ -113,6 +113,7 @@ public class PneuScript : MonoBehaviour
         {
             Instantiate(pneuTrashLoot[Random.Range(0, 4)], transform.position, transform.rotation);
         }
+        GameManager.enemiesKilled++;
         Destroy(gameObject);
 
     }

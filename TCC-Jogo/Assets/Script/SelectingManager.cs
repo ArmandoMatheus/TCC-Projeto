@@ -52,10 +52,10 @@ public class SelectingManager : MonoBehaviour
             pMetal = 0;
             pPapel = 1;
             pPlastico = 1;
-            AttText();            
+            AttText();
+            reciclavelSelectWindow.SetActive(false);
         }
     }
-
     public void Select2()
     {
         if (TrashManager.metalN >= 2 && TrashManager.plasticoN >= 1)
@@ -67,9 +67,9 @@ public class SelectingManager : MonoBehaviour
             pPapel = 0;
             pPlastico = 1;
             AttText();
+            reciclavelSelectWindow.SetActive(false);
         }
     }
-
     public void Select3()
     {
         if (TrashManager.vidroN >= 1 && TrashManager.papelN >= 1 && TrashManager.metalN >= 1)
@@ -81,9 +81,9 @@ public class SelectingManager : MonoBehaviour
             pPapel = 1;
             pPlastico = 0;
             AttText();
+            reciclavelSelectWindow.SetActive(false);
         }
     }
-
     public void Select4()
     {
         if (TrashManager.plasticoN >= 1 && TrashManager.metalN >= 1 && TrashManager.papelN >= 1)
@@ -95,14 +95,14 @@ public class SelectingManager : MonoBehaviour
             pPapel = 1;
             pPlastico = 1;
             AttText();
+            reciclavelSelectWindow.SetActive(false);
         }
     }
-
     public void Select5()
     {
         
-            reciclavelSelectWindow.SetActive(true);
-            isSelecting = true;
+        reciclavelSelectWindow.SetActive(true);
+        isSelecting = true;
         
     }
     public void Select5_1()
@@ -161,7 +161,6 @@ public class SelectingManager : MonoBehaviour
             AttText();
         }
     }
-
     public void CancelSelect()
     {
         isSelecting = false;
@@ -172,7 +171,6 @@ public class SelectingManager : MonoBehaviour
         pPlastico = 0;
         AttText();
     }
-
     public void Pay()
     {
         TrashManager.metalN -= pMetal;

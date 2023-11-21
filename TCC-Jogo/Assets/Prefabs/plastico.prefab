@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8366672667756292123}
   - component: {fileID: 8366672667756292124}
   - component: {fileID: 8366672667756292121}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: plastico
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,3 +116,4 @@ MonoBehaviour:
   isVidro: 0
   isPapel: 0
   isPlastico: 1
+  isLoot: 0

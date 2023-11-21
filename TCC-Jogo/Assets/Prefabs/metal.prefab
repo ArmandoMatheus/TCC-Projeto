@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8502330837961728109}
   - component: {fileID: 8502330837961728106}
   - component: {fileID: 8502330837961728111}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,4 +115,5 @@ MonoBehaviour:
   isMetal: 1
   isVidro: 0
   isPapel: 0
-  isPlatico: 0
+  isPlastico: 0
+  isLoot: 0

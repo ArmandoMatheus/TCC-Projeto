@@ -57,7 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8366672667756292125, guid: 5ff2f9f165ad4484eb46978a60aa5fea, type: 3}
       propertyPath: m_Name
-      value: LootPlastico
+      value: LootPlastico Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8366672667756292125, guid: 5ff2f9f165ad4484eb46978a60aa5fea, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ff2f9f165ad4484eb46978a60aa5fea, type: 3}

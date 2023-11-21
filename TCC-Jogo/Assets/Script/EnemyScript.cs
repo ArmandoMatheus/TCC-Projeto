@@ -94,7 +94,8 @@ public class EnemyScript : MonoBehaviour
         for (int i = 0; i < lootN; i++)
         {
             Instantiate(trashLoot[Random.Range(0, 4)], transform.position, transform.rotation);
-        }        
+        }
+        GameManager.enemiesKilled++;
         Destroy(gameObject);
     }
     void GotToBase()
